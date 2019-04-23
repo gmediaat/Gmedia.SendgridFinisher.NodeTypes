@@ -1,0 +1,16 @@
+prototype(Gmedia.SendgridFinisher.NodeTypes:Finisher.SendgridMail.Definition) < prototype(Neos.Form.Builder:Finisher.Definition) {
+	formElementType = ''
+
+	options {
+		subject = ${null}
+		recipients = ${[]}
+		carbonCopyRecipients = ${[]}
+		blindCarbonCopyRecipients = ${[]}
+		senderAddress = ${null}
+		senderName = ${null}
+		replyToAddress = ${null}
+		substitutions = ${null}
+
+		templateId = ${null}
+	}
+}

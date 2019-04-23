@@ -1,0 +1,17 @@
+{
+    "name": "gmedia/sendgridfinisher-nodetypes",
+    "description": "",
+    "type": "neos-plugin",
+    "license": [
+        "GPL-3.0-or-later"
+    ],
+    "require": {
+        "gmedia/sendgridfinisher": "*"
+    },
+    "authors": [
+        {
+            "name": "Felix Gradinaru",
+            "email": "felix@g-media.at"
+        }
+    ]
+}

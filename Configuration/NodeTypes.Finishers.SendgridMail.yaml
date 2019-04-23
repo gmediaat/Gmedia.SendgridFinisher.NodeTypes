@@ -1,0 +1,36 @@
+'Gmedia.SendgridFinisher.NodeTypes:Finisher.SendgridMail':
+  superTypes:
+    'Neos.Form.Builder:AbstractFinisher': true
+  ui:
+    label: 'SendGrid Mail Finisher'
+    icon: 'icon-mail'
+    inspector:
+      groups:
+        'finisher':
+          icon: 'icon-asterisk'
+  properties:
+    'subject':
+      type: string
+      ui:
+        label: 'Subject'
+        inspector:
+          group: 'finisher'
+      validation:
+        'Neos.Neos/Validation/NotEmptyValidator': []
+    'templateSource':
+      type: string
+      ui:
+        label: 'Template'
+        inspector:
+          group: 'finisher'
+          editor: 'Neos.Neos/Inspector/Editors/CodeEditor'
+          editorOptions:
+            buttonLabel: i18n
+    'recipients':
+      type: string
+      ui:
+        label: 'Recipients'
+        inspector:
+          group: 'finisher'
+      validation:
+        'Neos.Neos/Validation/NotEmptyValidator': []
