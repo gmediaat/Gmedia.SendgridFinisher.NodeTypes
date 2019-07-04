@@ -3,34 +3,123 @@
     'Neos.Form.Builder:AbstractFinisher': true
   ui:
     label: 'SendGrid Mail Finisher'
-    icon: 'icon-mail'
+    icon: 'icon-envelope-o'
     inspector:
       groups:
-        'finisher':
-          icon: 'icon-asterisk'
+        'email':
+          label: 'E-Mail'
+          icon: 'icon-envelope-o'
+        'sender':
+          label: 'Sender'
+          icon: 'icon-user'
+        'recipient':
+          label: 'Recipient'
+          icon: 'icon-user'
+        'carbonCopy':
+          label: 'CC-Recipient'
+          icon: 'icon-user'
+        'blindCarbonCopy':
+          label: 'BCC-Recipient'
+          icon: 'icon-user'
   properties:
     'subject':
       type: string
       ui:
         label: 'Subject'
         inspector:
-          group: 'finisher'
+          group: 'email'
       validation:
         'Neos.Neos/Validation/NotEmptyValidator': []
     'templateSource':
       type: string
       ui:
-        label: 'Template'
+        label: 'Body (Fluid)'
         inspector:
-          group: 'finisher'
+          group: 'email'
           editor: 'Neos.Neos/Inspector/Editors/CodeEditor'
           editorOptions:
             buttonLabel: i18n
-    'recipients':
+    'senderName':
       type: string
       ui:
-        label: 'Recipients'
+        label: 'Name'
         inspector:
-          group: 'finisher'
+          group: 'sender'
       validation:
         'Neos.Neos/Validation/NotEmptyValidator': []
+    'senderAddress':
+      type: string
+      ui:
+        label: 'Address'
+        inspector:
+          group: 'sender'
+      validation:
+        'Neos.Neos/Validation/NotEmptyValidator': []
+    'replyToAddress':
+      type: string
+      ui:
+        label: 'Reply-To'
+        inspector:
+          group: 'sender'
+    'recipientName':
+      type: string
+      ui:
+        label: 'Name'
+        inspector:
+          group: 'recipient'
+      validation:
+        'Neos.Neos/Validation/NotEmptyValidator': []
+    'recipientAddress':
+      type: string
+      ui:
+        label: 'Address'
+        inspector:
+          group: 'recipient'
+      validation:
+        'Neos.Neos/Validation/NotEmptyValidator': []
+    'carbonCopyName':
+      type: string
+      ui:
+        label: 'Name'
+        inspector:
+          group: 'carbonCopy'
+    'carbonCopyAddress':
+      type: string
+      ui:
+        label: 'Address'
+        inspector:
+          group: 'carbonCopy'
+    'blindCarbonCopyName':
+      type: string
+      ui:
+        label: 'Name'
+        inspector:
+          group: 'blindCarbonCopy'
+    'blindCarbonCopyAddress':
+      type: string
+      ui:
+        label: 'Address'
+        inspector:
+          group: 'blindCarbonCopy'
+    'format':
+      type: string
+      defaultValue: 'plaintext'
+      ui:
+        label: 'Format'
+        inspector:
+          group: 'email'
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              'html':
+                label: 'HTML'
+                icon: 'icon-code'
+              'plaintext':
+                label: 'Plain text'
+                icon: 'icon-font'
+    'attachAllPersistentResources':
+      type: boolean
+      ui:
+        label: 'Attach all persistent resources?'
+        inspector:
+          group: 'email'

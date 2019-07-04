@@ -13,5 +13,10 @@
             "name": "Felix Gradinaru",
             "email": "felix@g-media.at"
         }
-    ]
+    ],
+    "extra": {
+        "neos": {
+            "package-key": "Gmedia.SendgridFinisher.NodeTypes"
+        }
+    }
 }
